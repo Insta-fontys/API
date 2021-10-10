@@ -10,3 +10,15 @@ E:\Fontys\S3\Repository\ips3-react\API\DataAccesLibrary\obj\Debug\net5.0\DataAcc
 E:\Fontys\S3\Repository\ips3-react\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.dll
 E:\Fontys\S3\Repository\ips3-react\API\DataAccesLibrary\obj\Debug\net5.0\ref\DataAccesLibrary.dll
 E:\Fontys\S3\Repository\ips3-react\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.pdb
+E:\Fontys\S3\Repository\API\DataAccesLibrary\bin\Debug\net5.0\DataAccesLibrary.deps.json
+E:\Fontys\S3\Repository\API\DataAccesLibrary\bin\Debug\net5.0\DataAccesLibrary.dll
+E:\Fontys\S3\Repository\API\DataAccesLibrary\bin\Debug\net5.0\ref\DataAccesLibrary.dll
+E:\Fontys\S3\Repository\API\DataAccesLibrary\bin\Debug\net5.0\DataAccesLibrary.pdb
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.csprojAssemblyReference.cache
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.AssemblyInfoInputs.cache
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.AssemblyInfo.cs
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.csproj.CoreCompileInputs.cache
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.dll
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\ref\DataAccesLibrary.dll
+E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Fontys\\S3\\Repository\\ips3-react\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {}
+    "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {}
   },
   "projects": {
-    "E:\\Fontys\\S3\\Repository\\ips3-react\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
+    "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Fontys\\S3\\Repository\\ips3-react\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
+        "projectUniqueName": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
         "projectName": "DataAccesLibrary",
-        "projectPath": "E:\\Fontys\\S3\\Repository\\ips3-react\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
+        "projectPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
         "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-        "outputPath": "E:\\Fontys\\S3\\Repository\\ips3-react\\API\\DataAccesLibrary\\obj\\",
+        "outputPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
