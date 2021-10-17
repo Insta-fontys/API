@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccesLibrary.Models
 {
-    public class Creator
+    public class Creator : User
     {
-        public long Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public Wallet Wallet { get; set; } = new Wallet();
-        public List<Fan> fans { get; set; } = new List<Fan>();
+        public string Bio { get; set; }
+        public string Website { get; set; }
+        public List<CreatorFans> Followers { get; set; } = new List<CreatorFans>();
+        public List<Post> Posts { get; set; } = new List<Post>();
+        public List<Fan> BannedFans { get; set; } = new List<Fan>();
     }
 }

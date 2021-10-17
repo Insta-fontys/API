@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataAccesLibrary.Models
 {
-    public class Fan
+    public class Fan : User
     {
-        public long Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public Wallet Wallet { get; set; } = new Wallet();
-        public List<Creator> Creators { get; set; } = new List<Creator>();
+        public List<CreatorFans> CreatorFans { get; set; } = new List<CreatorFans>();
+        public List<Reaction> Reactions { get; set; } = new List<Reaction>();
+        public List<LikedPosts> LikedPosts { get; set; } = new List<LikedPosts>();
+        public List<SavedPosts> SavedPosts { get; set; } = new List<SavedPosts>();
     }
 }
