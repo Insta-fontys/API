@@ -43,6 +43,7 @@ namespace API
             services.AddTransient<IRegisterDatabase, RegisterDatabaseService>();
             services.AddTransient<ILoginDatabase, LoginDatabaseService>();
             services.AddTransient<IPostDatabase, PostDatabaseService>();
+            services.AddTransient<IReactionDatabase, ReactionDatabaseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

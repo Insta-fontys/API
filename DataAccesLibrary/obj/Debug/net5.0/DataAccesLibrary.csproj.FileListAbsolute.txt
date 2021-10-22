@@ -22,3 +22,15 @@ E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.c
 E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.dll
 E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\ref\DataAccesLibrary.dll
 E:\Fontys\S3\Repository\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.pdb
+D:\Fontys\S3\API\DataAccesLibrary\bin\Debug\net5.0\DataAccesLibrary.deps.json
+D:\Fontys\S3\API\DataAccesLibrary\bin\Debug\net5.0\DataAccesLibrary.dll
+D:\Fontys\S3\API\DataAccesLibrary\bin\Debug\net5.0\ref\DataAccesLibrary.dll
+D:\Fontys\S3\API\DataAccesLibrary\bin\Debug\net5.0\DataAccesLibrary.pdb
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.csprojAssemblyReference.cache
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.AssemblyInfoInputs.cache
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.AssemblyInfo.cs
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.csproj.CoreCompileInputs.cache
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.dll
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\ref\DataAccesLibrary.dll
+D:\Fontys\S3\API\DataAccesLibrary\obj\Debug\net5.0\DataAccesLibrary.pdb
