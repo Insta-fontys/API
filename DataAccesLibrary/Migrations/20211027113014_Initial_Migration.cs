@@ -3,7 +3,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace DataAccesLibrary.Migrations
 {
-    public partial class initial_migration : Migration
+    public partial class Initial_Migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,7 +20,8 @@ namespace DataAccesLibrary.Migrations
                     Username = table.Column<string>(type: "text", nullable: true),
                     Password = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
-                    Tokens = table.Column<int>(type: "int", nullable: false)
+                    Tokens = table.Column<int>(type: "int", nullable: false),
+                    Salt = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -39,7 +40,8 @@ namespace DataAccesLibrary.Migrations
                     Username = table.Column<string>(type: "text", nullable: true),
                     Password = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
-                    Tokens = table.Column<int>(type: "int", nullable: false)
+                    Tokens = table.Column<int>(type: "int", nullable: false),
+                    Salt = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

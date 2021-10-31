@@ -15,5 +15,6 @@ namespace DataAccesLibrary.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public int Tokens { get; set; }
+        public string Salt { get; set; }
     }
 }

@@ -6,12 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using System.Text;
+using API.Security.Interface;
+using API.Security;
 
 namespace API.Services
 {
     public class RegisterDatabaseService : IRegisterDatabase
     {
         private readonly DatabaseContext _context;
+        private EncryptManager encryptManager = new EncryptManager();
 
         public RegisterDatabaseService(DatabaseContext context)
         {
@@ -24,6 +28,9 @@ namespace API.Services
                 return false;
 
             var _fan = CreateFan(fan);
+            _fan.Salt = encryptManager.CreateSaltString();
+            _fan.Password = encryptManager.Hash(_fan.Salt, _fan.Password);
+
             try
             {
                 _context.Fans.Add(_fan);
@@ -84,20 +91,5 @@ namespace API.Services
         {
             return _context.Creators.Any(i => i.Username.Equals(username));
         }
-
-        //private string CreateSalt(string password)
-        //{
-        //    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-        //    byte[] buffer = new byte[1024];
-
-        //    rng.GetBytes(buffer);
-        //    string salt = BitConverter.ToString(buffer);
-        //    return salt;
-        //}
-
-        //private string CreateHash(string salt)
-        //{
-
-        //}
     }
 }

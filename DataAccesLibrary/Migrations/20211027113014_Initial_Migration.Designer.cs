@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccesLibrary.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211015095201_initial_migration")]
-    partial class initial_migration
+    [Migration("20211027113014_Initial_Migration")]
+    partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,9 @@ namespace DataAccesLibrary.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Salt")
                         .HasColumnType("text");
 
                     b.Property<int>("Tokens")
@@ -94,6 +97,9 @@ namespace DataAccesLibrary.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Salt")
                         .HasColumnType("text");
 
                     b.Property<int>("Tokens")

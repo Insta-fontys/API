@@ -38,6 +38,9 @@ namespace DataAccesLibrary.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("text");
 
+                    b.Property<string>("Salt")
+                        .HasColumnType("text");
+
                     b.Property<int>("Tokens")
                         .HasColumnType("int");
 
@@ -92,6 +95,9 @@ namespace DataAccesLibrary.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Salt")
                         .HasColumnType("text");
 
                     b.Property<int>("Tokens")
