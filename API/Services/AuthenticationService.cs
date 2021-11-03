@@ -42,7 +42,7 @@ namespace API.Services
             var result = await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false);
 
             if (result.Succeeded)
-                return JwtAuthenticationManager.GenerateJwtToken();
+                return JwtAuthenticationManager.GenerateJwtToken(loginModel);
             return null;
         }
     }

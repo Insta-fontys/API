@@ -1,4 +1,5 @@
 ﻿using DataAccesLibrary.DataAccess;
+using DataAccesLibrary.Dto;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,15 @@ namespace API.Security
 {
     public static class JwtAuthenticationManager
     {
-        public static string GenerateJwtToken()
+        public static string GenerateJwtToken(LoginModel loginModel)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.ASCII.GetBytes("DSEFSDF324dsfsd!@QWDF3erf#");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim(ClaimTypes.Name, "Name")
+                    new Claim(ClaimTypes.Email, loginModel.Email),
+                    new Claim(ClaimTypes.Name, loginModel.Password)
                 }),
                 Expires = DateTime.Now.AddYears(3),
                 SigningCredentials = new SigningCredentials(
