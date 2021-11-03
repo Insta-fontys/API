@@ -10,7 +10,7 @@ namespace DataAccesLibrary.DataAccess
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext(DbContextOptions options) : base(options) { }
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         public DbSet<Creator> Creators { get; set; }
         public DbSet<Fan> Fans { get; set; }

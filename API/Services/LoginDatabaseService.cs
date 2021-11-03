@@ -1,5 +1,6 @@
 ﻿using API.Services.Interfaces;
 using DataAccesLibrary.DataAccess;
+using DataAccesLibrary.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,20 +19,54 @@ namespace API.Services
 
         public async Task<bool> LoginFan(string username, string password)
         {
-            var result = _context.Fans.Where(x => x.Username.Equals(username) && x.Password.Equals(password)).FirstOrDefault();
+            //var salt = GetSalt(loginModel.Username);
+            //var password = encryptManager.Hash(salt, loginModel.Password);
+            //var result = _context.Fans.Where(x => x.Username.Equals(loginModel.Username) && x.Password.Equals(password)).FirstOrDefault();
 
-            if (result == null)
-                return false;
+            //if (result == null)
+            //    return false;
             return true;
         }
 
         public async Task<bool> LoginCreator(string username, string password)
         {
-            var result = _context.Creators.Where(x => x.Username.Equals(username) && x.Password.Equals(password)).FirstOrDefault();
+            //var salt = GetSalt(loginModel.Username);
+            //var password = encryptManager.Hash(salt, loginModel.Password);
+            //var result = _context.Creators.Where(x => x.Username.Equals(loginModel.Username) && x.Password.Equals(password)).FirstOrDefault();
 
-            if (result == null)
-                return false;
+            //if (result == null)
+            //    return false;
             return true;
+        }
+
+        public string GetSalt(string username)
+        {
+            //Fan result =_context.Fans.Where(i => i.Username == username).FirstOrDefault();
+            //return result.Salt;
+            return "salt";
+        }
+
+        public string Authenticate(LoginModel loginModel)
+        {
+            //if (!_context.Fans.Any(f => f.Username == loginModel.Username && f.Password == loginModel.Password))
+            //    return null;
+
+            //var tokenHandler = new JwtSecurityTokenHandler();
+            //var tokenKey = Encoding.ASCII.GetBytes(key);
+            //var tokenDescriptor = new SecurityTokenDescriptor
+            //{
+            //    Subject = new ClaimsIdentity(new Claim[] {
+            //        new Claim(ClaimTypes.Name, loginModel.Username)
+            //    }),
+            //    Expires = DateTime.Now.AddHours(3),
+            //    SigningCredentials = new SigningCredentials(
+            //        new SymmetricSecurityKey(tokenKey),
+            //        SecurityAlgorithms.HmacSha256Signature)
+            //};
+            //var token = tokenHandler.CreateToken(tokenDescriptor);
+            //return tokenHandler.WriteToken(token);
+            return "lol";
+
         }
     }
 }
