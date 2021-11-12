@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace API.Services
@@ -22,7 +24,10 @@ namespace API.Services
 
         public async Task<bool> CreateIdentityUser(IdentityUser user, string role)
         {
+            // TODO Generate random password here
             var password = "!erQWE2qweqweS";
+            //var password = RandomPasswordGenerator(13);
+
             var result = await userManager.CreateAsync(user, password);
 
             if (result.Succeeded)
@@ -31,6 +36,18 @@ namespace API.Services
                 return true;
             }
             return false;
+        }
+
+        private string RandomPasswordGenerator(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*(";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
         }
     }
 }

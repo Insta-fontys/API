@@ -1,6 +1,7 @@
 ﻿using API.Services.Interfaces;
 using DataAccesLibrary.DataAccess;
 using DataAccesLibrary.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace API.Services
         public PostDatabaseService(DatabaseContext context)
         {
             _context = context;
+        }
+
+        public async Task<List<Post>> GetPosts()
+        {
+            var list = await _context.Posts.ToListAsync();
+            return list;
         }
 
         public async Task<bool> PostPost(Post post, long creatorId)

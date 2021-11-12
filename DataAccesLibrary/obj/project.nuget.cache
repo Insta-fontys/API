@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cXIOSr1teNKvl0kOh9u/LKiIqEvU5KG3441yb+HMWh8Qp2eMzEJZBQcQqjWSY3h8e/JN9sBPkpa+uiNMc0BiaQ==",
+  "dgSpecHash": "841Y4o4iXDUHzDD6QYiquTDzX4VkHtW24wBIJbZLxvp8rXtJNlcgK02ptL7xWm9sc9SOin4IcF4NpSpUKK/x2w==",
   "success": true,
-  "projectFilePath": "D:\\Fontys\\S3\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
+  "projectFilePath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Max\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
@@ -48,12 +48,5 @@
     "C:\\Users\\Max\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Fontys\\S3\\API\\DataAccesLibrary\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -1,19 +1,17 @@
-﻿using API.Services.Interfaces;
+﻿using API.Services;
+using API.Services.Interfaces;
 using DataAccesLibrary.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using API.Services;
-using System.Security.Claims;
-using System.IO;
-using System.Net.Http.Headers;
 
 namespace API.Controllers
 {
-    [Authorize(Roles ="creator")]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PostController : ControllerBase
@@ -25,6 +23,13 @@ namespace API.Controllers
         {
             this.userService = userService;
             _database = database;
+        }
+
+        [HttpGet]
+        public async Task<List<Post>> GetPosts()
+        {
+            var list = await _database.GetPosts();
+            return list;
         }
 
         [HttpPost]
