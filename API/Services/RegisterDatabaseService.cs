@@ -33,7 +33,7 @@ namespace API.Services
 
             if (!await identityRegistrationService.DoesEmailExist(fan.Email))
                 return false;
-            if (await identityRegistrationService.CreateIdentityUser(user))
+            if (await identityRegistrationService.CreateIdentityUser(user, "fan"))
             {
                 _context.Fans.Add(_fan);
                 await _context.SaveChangesAsync();
@@ -54,7 +54,7 @@ namespace API.Services
 
             if (!await identityRegistrationService.DoesEmailExist(creator.Email))
                 return false;
-            if (await identityRegistrationService.CreateIdentityUser(user))
+            if (await identityRegistrationService.CreateIdentityUser(user, "creator"))
             {
                 _context.Creators.Add(_creator);
                 await _context.SaveChangesAsync();

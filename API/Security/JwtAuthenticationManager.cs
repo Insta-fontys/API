@@ -1,5 +1,6 @@
 ﻿using DataAccesLibrary.DataAccess;
 using DataAccesLibrary.Dto;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,18 @@ namespace API.Security
 {
     public static class JwtAuthenticationManager
     {
-        public static string GenerateJwtToken(LoginModel loginModel)
+        public static string GenerateJwtToken( IdentityUser user, string role)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.ASCII.GetBytes("DSEFSDF324dsfsd!@QWDF3erf#");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim(ClaimTypes.Email, loginModel.Email),
-                    new Claim(ClaimTypes.Name, loginModel.Password)
+                    new Claim("Name", user.UserName),
+                    new Claim("Email", user.Email),
+                    new Claim("Role", role)
                 }),
-                Expires = DateTime.Now.AddYears(3),
+                Expires = DateTime.Now.AddDays(7),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(tokenKey),
                     SecurityAlgorithms.HmacSha256Signature)

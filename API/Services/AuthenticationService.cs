@@ -40,9 +40,10 @@ namespace API.Services
         {
             var user = await userManager.FindByEmailAsync(loginModel.Email);
             var result = await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false);
+            var roles = await userManager.GetRolesAsync(user);
 
             if (result.Succeeded)
-                return JwtAuthenticationManager.GenerateJwtToken(loginModel);
+                return JwtAuthenticationManager.GenerateJwtToken(user, roles.First());
             return null;
         }
     }

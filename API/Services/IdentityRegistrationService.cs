@@ -1,9 +1,4 @@
-﻿using API.Services.Interfaces;
-using DataAccesLibrary.Models;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 
 namespace API.Services
@@ -25,13 +20,14 @@ namespace API.Services
             return true;
         }
 
-        public async Task<bool> CreateIdentityUser(IdentityUser user)
+        public async Task<bool> CreateIdentityUser(IdentityUser user, string role)
         {
             var password = "!erQWE2qweqweS";
             var result = await userManager.CreateAsync(user, password);
 
             if (result.Succeeded)
             {
+                await userManager.AddToRoleAsync(user, role);
                 return true;
             }
             return false;

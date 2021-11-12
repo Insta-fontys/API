@@ -4,6 +4,7 @@ using DataAccesLibrary.DataAccess;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,7 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using System;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace API
 {
@@ -40,6 +43,13 @@ namespace API
                         .AllowAnyMethod()
                         .AllowAnyHeader();
                     });
+            });
+
+            services.Configure<FormOptions>(o =>
+            {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
             });
 
             services.AddControllers()
@@ -86,7 +96,7 @@ namespace API
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("This is the key for encrypting this thing")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("DSEFSDF324dsfsd!@QWDF3erf#")),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
@@ -100,10 +110,12 @@ namespace API
 
             services.AddTransient<IdentityRegistrationService>();
             services.AddTransient<AuthenticationService>();
+            services.AddTransient<UserService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             app.UseCors(MyAllowSpecificOrigins);
             if (env.IsDevelopment())
@@ -117,13 +129,35 @@ namespace API
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseStaticFiles();
+
+           
 
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            Init(serviceProvider).Wait();
+
+        }
+
+        private static async Task Init(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+            //create correct roles
+            if (!await roleManager.RoleExistsAsync("admin"))
+                await roleManager.CreateAsync(new IdentityRole("admin"));
+            if (!await roleManager.RoleExistsAsync("fan"))
+                await roleManager.CreateAsync(new IdentityRole("fan"));
+            if (!await roleManager.RoleExistsAsync("creator"))
+                await roleManager.CreateAsync(new IdentityRole("creator"));
         }
     }
 }
