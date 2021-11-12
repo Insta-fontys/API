@@ -1,5 +1,6 @@
 ﻿using API.Services.Interfaces;
 using DataAccesLibrary.DataAccess;
+using DataAccesLibrary.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +19,23 @@ namespace API.Services
 
         public async Task<bool> LoginFan(string username, string password)
         {
-            var result = _context.Fans.Where(x => x.Username.Equals(username) && x.Password.Equals(password)).FirstOrDefault();
+            //var salt = GetSalt(loginModel.Username);
+            //var password = encryptManager.Hash(salt, loginModel.Password);
+            //var result = _context.Fans.Where(x => x.Username.Equals(loginModel.Username) && x.Password.Equals(password)).FirstOrDefault();
 
-            if (result == null)
-                return false;
+            //if (result == null)
+            //    return false;
             return true;
         }
 
         public async Task<bool> LoginCreator(string username, string password)
         {
-            var result = _context.Creators.Where(x => x.Username.Equals(username) && x.Password.Equals(password)).FirstOrDefault();
+            //var salt = GetSalt(loginModel.Username);
+            //var password = encryptManager.Hash(salt, loginModel.Password);
+            //var result = _context.Creators.Where(x => x.Username.Equals(loginModel.Username) && x.Password.Equals(password)).FirstOrDefault();
 
-            if (result == null)
-                return false;
+            //if (result == null)
+            //    return false;
             return true;
         }
     }

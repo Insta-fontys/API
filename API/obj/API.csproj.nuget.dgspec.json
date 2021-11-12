@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Fontys\\S3\\API\\API\\API.csproj": {}
+    "E:\\Fontys\\S3\\Repository\\API\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\Fontys\\S3\\API\\API\\API.csproj": {
+    "E:\\Fontys\\S3\\Repository\\API\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fontys\\S3\\API\\API\\API.csproj",
+        "projectUniqueName": "E:\\Fontys\\S3\\Repository\\API\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Fontys\\S3\\API\\API\\API.csproj",
+        "projectPath": "E:\\Fontys\\S3\\Repository\\API\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-        "outputPath": "D:\\Fontys\\S3\\API\\API\\obj\\",
+        "outputPath": "E:\\Fontys\\S3\\Repository\\API\\API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Fontys\\S3\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
-                "projectPath": "D:\\Fontys\\S3\\API\\DataAccesLibrary\\DataAccesLibrary.csproj"
+              "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
+                "projectPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj"
               }
             }
           }
@@ -44,13 +48,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[5.0.9, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -103,21 +111,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Fontys\\S3\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
+    "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fontys\\S3\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
+        "projectUniqueName": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
         "projectName": "DataAccesLibrary",
-        "projectPath": "D:\\Fontys\\S3\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
+        "projectPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
         "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-        "outputPath": "D:\\Fontys\\S3\\API\\DataAccesLibrary\\obj\\",
+        "outputPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -143,9 +155,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.11, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
@@ -171,7 +187,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

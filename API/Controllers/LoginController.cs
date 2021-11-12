@@ -1,4 +1,7 @@
-﻿using API.Services.Interfaces;
+﻿using API.Services;
+using API.Services.Interfaces;
+using DataAccesLibrary.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,10 +16,12 @@ namespace API.Controllers
     public class LoginController : ControllerBase
     {
         private readonly ILoginDatabase _database;
+        private readonly AuthenticationService authenticationService;
 
-        public LoginController(ILoginDatabase database)
+        public LoginController(ILoginDatabase database, AuthenticationService authenticationService)
         {
             _database = database;
+            this.authenticationService = authenticationService;
         }
 
         [HttpGet("fan")]
@@ -30,6 +35,14 @@ namespace API.Controllers
         public async Task<ActionResult<bool>> LoginCreator(string username, string password)
         {
             var result = await _database.LoginCreator(username, password);
+            return result;
+        }
+
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<string> Authenticate([FromBody] LoginModel loginModel)
+        {
+            var result = await authenticationService.Authenticate(loginModel);
             return result;
         }
     }

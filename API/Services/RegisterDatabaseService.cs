@@ -3,6 +3,7 @@ using DataAccesLibrary.DataAccess;
 using DataAccesLibrary.Models;
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
@@ -12,48 +13,53 @@ namespace API.Services
     public class RegisterDatabaseService : IRegisterDatabase
     {
         private readonly DatabaseContext _context;
+        private readonly IdentityRegistrationService identityRegistrationService;
 
-        public RegisterDatabaseService(DatabaseContext context)
+        public RegisterDatabaseService(DatabaseContext context, IdentityRegistrationService identityRegistrationService)
         {
             _context = context;
+            this.identityRegistrationService = identityRegistrationService;
         }
 
         public async Task<bool> PostFanAccount(Fan fan)
         {
-            if (CheckFanUsername(fan.Username))
-                return false;
-
             var _fan = CreateFan(fan);
-            try
+
+            var user = new IdentityUser
+            {
+                Email = fan.Email.Trim(),
+                UserName = fan.Username.Trim()
+            };
+
+            if (!await identityRegistrationService.DoesEmailExist(fan.Email))
+                return false;
+            if (await identityRegistrationService.CreateIdentityUser(user, "fan"))
             {
                 _context.Fans.Add(_fan);
                 await _context.SaveChangesAsync();
-                return true;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
+            return true;
+
         }
 
         public async Task<bool> PostCreatorAccount(Creator creator)
         {
-            if (CheckCreatorUsername(creator.Username))
-                return false;
-
             var _creator = CreateCreator(creator);
-            try
+
+            var user = new IdentityUser
+            {
+                Email = creator.Email.Trim(),
+                UserName = creator.Username.Trim()
+            };
+
+            if (!await identityRegistrationService.DoesEmailExist(creator.Email))
+                return false;
+            if (await identityRegistrationService.CreateIdentityUser(user, "creator"))
             {
                 _context.Creators.Add(_creator);
                 await _context.SaveChangesAsync();
-                return true;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
+            return true;
         }
 
         private Fan CreateFan(Fan fan)
@@ -75,29 +81,5 @@ namespace API.Services
             return creator;
         }
 
-        private bool CheckFanUsername(string username)
-        {
-            return _context.Fans.Any(i => i.Username.Equals(username));
-        }
-
-        private bool CheckCreatorUsername(string username)
-        {
-            return _context.Creators.Any(i => i.Username.Equals(username));
-        }
-
-        //private string CreateSalt(string password)
-        //{
-        //    RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-        //    byte[] buffer = new byte[1024];
-
-        //    rng.GetBytes(buffer);
-        //    string salt = BitConverter.ToString(buffer);
-        //    return salt;
-        //}
-
-        //private string CreateHash(string salt)
-        //{
-
-        //}
     }
 }
