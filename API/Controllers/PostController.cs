@@ -99,9 +99,9 @@ namespace API.Controllers
         }
 
         [HttpPut("id")]
-        public async Task<ActionResult<bool>> LikePost(long id)
+        public async Task<ActionResult<bool>> LikePost(Post post)
         {
-            var result = await _database.LikePost(id);
+            var result = await _database.LikePost(post);
 
             if (!result)
                 return BadRequest(result);

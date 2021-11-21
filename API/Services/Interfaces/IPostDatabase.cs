@@ -12,7 +12,7 @@ namespace API.Services.Interfaces
         public Task<bool> PostPost(Post post, long creatorId);
         public Task<List<Post>> GetPosts();
         public Task<bool> DeletePost(long id);
-        public Task<bool> LikePost(long id);
+        public Task<bool> LikePost(Post post);
         public Task<bool> RemoveLike(long id);
     }
 }

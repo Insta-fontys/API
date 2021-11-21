@@ -57,13 +57,13 @@ namespace API.Services
             }
         }
 
-        public async Task<bool> LikePost(long id)
+        public async Task<bool> LikePost(Post post)
         {
             try
             {
-                var post = await _context.Posts.FindAsync(id);
+                var _post = await _context.Posts.FindAsync(post.Id);
 
-                post.Likes += 1;
+                _post.Likes += 1;
 
                 await _context.SaveChangesAsync();
                 return true;

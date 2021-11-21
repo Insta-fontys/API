@@ -21,5 +21,10 @@ namespace API.Services
         {
             return await _context.Creators.Where(i => i.Username == username).FirstOrDefaultAsync();
         }
+
+        public async Task<Fan> GetFanByUsername(string username)
+        {
+            return await _context.Fans.Where(i => i.Username == username).FirstOrDefaultAsync();
+        }
     }
 }
