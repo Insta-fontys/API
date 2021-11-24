@@ -20,7 +20,8 @@ namespace API.Services
 
         public async Task<List<Post>> GetPosts()
         {
-            var list = await _context.Posts.ToListAsync();
+            //var list = await _context.Posts.ToListAsync();
+            var list = await _context.Posts.Include(i => i.Reactions).ToListAsync();
             return list;
         }
 

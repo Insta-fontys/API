@@ -23,11 +23,11 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<bool>> PostPost([FromBody] Reaction reaction, long postId, long fanId)
+        public async Task<ActionResult<bool>> PostReaction([FromBody] Reaction reaction)
         {
             var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
-            var creator = await userService.GetFanByUsername(name);
-            var result = await _database.PostReaction(reaction, postId, creator.Id);
+            Fan fan = await userService.GetFanByUsername(name);
+            var result = await _database.PostReaction(reaction, reaction.PostId, fan.Id);
             if (!result)
                 return BadRequest(result);
             return Ok(result);
