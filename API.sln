@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{4784D26B-740D-4BE0-84E8-E9F59E46B170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{4784D26B-740D-4BE0-84E8-E9F59E46B170}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccesLibrary", "DataAccesLibrary\DataAccesLibrary.csproj", "{28AF5CAC-A9BD-4AD0-93D5-E2C13D8704B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccesLibrary", "DataAccesLibrary\DataAccesLibrary.csproj", "{28AF5CAC-A9BD-4AD0-93D5-E2C13D8704B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.tests", "Application.tests\Application.tests.csproj", "{B7759664-3332-4074-B9F2-A518ADBE9C85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{28AF5CAC-A9BD-4AD0-93D5-E2C13D8704B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28AF5CAC-A9BD-4AD0-93D5-E2C13D8704B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28AF5CAC-A9BD-4AD0-93D5-E2C13D8704B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7759664-3332-4074-B9F2-A518ADBE9C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7759664-3332-4074-B9F2-A518ADBE9C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7759664-3332-4074-B9F2-A518ADBE9C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7759664-3332-4074-B9F2-A518ADBE9C85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -108,6 +108,7 @@ namespace API
             services.AddTransient<IReactionDatabase, ReactionDatabaseService>();
             services.AddTransient<ILikePostsDatabase, LikePostDatabaseService>();
             services.AddTransient<ITokenDatabase, TokenDatabaseService>();
+            services.AddTransient<IFollowDatabase, FollowDatabaseService>();
             //services.AddTransient<ISavePostDatabase, SavePostDatabaseService>();
 
             services.AddTransient<IdentityRegistrationService>();

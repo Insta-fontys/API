@@ -26,6 +26,26 @@ namespace API.Controllers
             _database = database;
         }
 
+        [HttpGet]
+        public async Task<List<CreatorFans>> GetFollowers()
+        {
+            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            Creator creator = await userService.GetCreatorByUserName(name);
+
+            return await _database.GetFollowers(creator.Id);
+
+        }
+
+        [HttpGet("following")]
+        public async Task<List<CreatorFans>> GetFollowings()
+        {
+            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            Fan fan = await userService.GetFanByUsername(name);
+
+            return await _database.GetFollowers(fan.Id);
+
+        }
+
         [HttpPost]
         public async Task<ActionResult<bool>> PostFollow(CreatorFans followModel)
         {

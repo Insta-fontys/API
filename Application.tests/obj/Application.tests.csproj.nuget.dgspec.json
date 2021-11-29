@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {}
+    "E:\\Fontys\\S3\\Repository\\API\\Application.tests\\Application.tests.csproj": {}
   },
   "projects": {
-    "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj": {
+    "E:\\Fontys\\S3\\Repository\\API\\Application.tests\\Application.tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
-        "projectName": "DataAccesLibrary",
-        "projectPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\DataAccesLibrary.csproj",
+        "projectUniqueName": "E:\\Fontys\\S3\\Repository\\API\\Application.tests\\Application.tests.csproj",
+        "projectName": "Application.tests",
+        "projectPath": "E:\\Fontys\\S3\\Repository\\API\\Application.tests\\Application.tests.csproj",
         "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-        "outputPath": "E:\\Fontys\\S3\\Repository\\API\\DataAccesLibrary\\obj\\",
+        "outputPath": "E:\\Fontys\\S3\\Repository\\API\\Application.tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,21 +44,25 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[16.7.1, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[1.3.0, )"
             },
-            "MySql.EntityFrameworkCore": {
+            "xunit": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[2.4.1, )"
             },
-            "Pomelo.EntityFrameworkCore.MySql": {
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[2.4.3, )"
             }
           },
           "imports": [
