@@ -18,6 +18,7 @@ namespace DataAccesLibrary.DataAccess
         public DbSet<Post> Posts { get; set; }
         public DbSet<Reaction> Reactions { get; set; }
         public DbSet<SavedPosts> SavedPosts { get; set; }
+        public DbSet<CreatorFans> CreatorFans { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

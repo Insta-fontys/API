@@ -119,6 +119,9 @@ namespace DataAccesLibrary.Migrations
                     b.Property<long>("CreatorId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("CreatorUsername")
+                        .HasColumnType("text");
+
                     b.Property<string>("Description")
                         .HasColumnType("text");
 

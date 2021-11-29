@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccesLibrary.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211015095201_initial_migration")]
-    partial class initial_migration
+    [Migration("20211126140934_table_changes")]
+    partial class table_changes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.9");
+                .HasAnnotation("ProductVersion", "5.0.11");
 
             modelBuilder.Entity("DataAccesLibrary.Models.Creator", b =>
                 {
@@ -29,15 +29,6 @@ namespace DataAccesLibrary.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
                         .HasColumnType("text");
 
                     b.Property<int>("Tokens")
@@ -87,15 +78,6 @@ namespace DataAccesLibrary.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("text");
-
                     b.Property<int>("Tokens")
                         .HasColumnType("int");
 
@@ -138,6 +120,9 @@ namespace DataAccesLibrary.Migrations
 
                     b.Property<long>("CreatorId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("CreatorUsername")
+                        .HasColumnType("text");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");

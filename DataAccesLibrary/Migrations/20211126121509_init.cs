@@ -3,7 +3,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace DataAccesLibrary.Migrations
 {
-    public partial class initial_migration : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,10 +15,7 @@ namespace DataAccesLibrary.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Bio = table.Column<string>(type: "text", nullable: true),
                     Website = table.Column<string>(type: "text", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    LastName = table.Column<string>(type: "text", nullable: true),
                     Username = table.Column<string>(type: "text", nullable: true),
-                    Password = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
                     Tokens = table.Column<int>(type: "int", nullable: false)
                 },
@@ -34,10 +31,7 @@ namespace DataAccesLibrary.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreatorId = table.Column<long>(type: "bigint", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    LastName = table.Column<string>(type: "text", nullable: true),
                     Username = table.Column<string>(type: "text", nullable: true),
-                    Password = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
                     Tokens = table.Column<int>(type: "int", nullable: false)
                 },
@@ -61,6 +55,7 @@ namespace DataAccesLibrary.Migrations
                     Image = table.Column<string>(type: "text", nullable: true),
                     Description = table.Column<string>(type: "text", nullable: true),
                     Likes = table.Column<int>(type: "int", nullable: false),
+                    CreatorUsername = table.Column<string>(type: "text", nullable: true),
                     CreatorId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>

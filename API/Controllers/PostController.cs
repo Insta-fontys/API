@@ -38,7 +38,7 @@ namespace API.Controllers
 
             var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
             var creator = await userService.GetCreatorByUserName(name);
-            var result = await _database.PostPost(post, creator.Id);
+            var result = await _database.PostPost(post, creator);
             if (!result)
                 return BadRequest(result);
             return Ok(result);
@@ -74,7 +74,7 @@ namespace API.Controllers
 
                     post.Image = fullPath;
                     post.Description = "test";
-                    var result = await _database.PostPost(post, creator.Id);
+                    var result = await _database.PostPost(post, creator);
 
                     return Ok();
                 }

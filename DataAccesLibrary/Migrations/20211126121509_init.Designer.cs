@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccesLibrary.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211108115555_table_changes")]
-    partial class table_changes
+    [Migration("20211126121509_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -120,6 +120,9 @@ namespace DataAccesLibrary.Migrations
 
                     b.Property<long>("CreatorId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("CreatorUsername")
+                        .HasColumnType("text");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");

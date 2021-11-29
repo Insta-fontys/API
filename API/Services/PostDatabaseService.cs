@@ -25,9 +25,9 @@ namespace API.Services
             return list;
         }
 
-        public async Task<bool> PostPost(Post post, long creatorId)
+        public async Task<bool> PostPost(Post post, Creator creator)
         {
-            var _post = CreatePostWithCorrectReferences(post, creatorId);
+            var _post = CreatePostWithCorrectReferences(post, creator);
             try
             {
                 _context.Posts.Add(_post);
@@ -93,11 +93,12 @@ namespace API.Services
             }
         }
 
-        private Post CreatePostWithCorrectReferences(Post post, long creatorId)
+        private Post CreatePostWithCorrectReferences(Post post, Creator creator)
         {
             post.Reactions = new List<Reaction>();
 
-            post.CreatorId = creatorId;
+            post.CreatorId = creator.Id;
+            post.CreatorUsername = creator.Username;
             post.Creator = null;
 
             return post;

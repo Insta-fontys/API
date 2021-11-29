@@ -9,7 +9,7 @@ namespace API.Services.Interfaces
 {
     public interface IPostDatabase
     {
-        public Task<bool> PostPost(Post post, long creatorId);
+        public Task<bool> PostPost(Post post, Creator creator);
         public Task<List<Post>> GetPosts();
         public Task<bool> DeletePost(long id);
         public Task<bool> LikePost(Post post);
