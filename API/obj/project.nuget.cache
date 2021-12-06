@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nQgfrefcSvKW5jKBDAdef1e5dOPfwXE0PkPnPnIWE1srYiPquePpdDYOFIWbUBOz8b4NnGHs9RQGcRL2LSrwUA==",
+  "dgSpecHash": "1EeI6SXajh51uyHi+GhLZmOkYGwB7FoNMYmB718i+A9M2Ld1SpwTRk11nLSvLopjadE/+fDlrLRSVfcDtGt0+Q==",
   "success": true,
-  "projectFilePath": "E:\\Fontys\\S3\\Repository\\API\\API\\API.csproj",
+  "projectFilePath": "D:\\Fontys\\S3\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Max\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
@@ -52,6 +52,7 @@
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Max\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\mysql.data\\8.0.26\\mysql.data.8.0.26.nupkg.sha512",

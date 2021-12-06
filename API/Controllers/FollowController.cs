@@ -42,7 +42,7 @@ namespace API.Controllers
             var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
             Fan fan = await userService.GetFanByUsername(name);
 
-            return await _database.GetFollowers(fan.Id);
+            return await _database.GetFollowings(fan.Id);
 
         }
 

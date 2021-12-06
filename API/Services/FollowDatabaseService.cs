@@ -21,12 +21,14 @@ namespace API.Services
 
         public async Task<List<CreatorFans>> GetFollowers(long creatorId)
         {
-            return await _context.CreatorFans.Where(i => i.CreatorId == creatorId).Include(i => i.Fan).ToListAsync();
+            var list = await _context.CreatorFans.Where(i => i.CreatorId == creatorId).Include(i => i.Fan).ToListAsync();
+            return list;
         }
 
         public async Task<List<CreatorFans>> GetFollowings(long fanId)
         {
-            return await _context.CreatorFans.Where(i => i.FanId == fanId).Include(i => i.Creator).ToListAsync();
+            var list = await _context.CreatorFans.Where(i => i.FanId == fanId).Include(i => i.Creator).ToListAsync();
+            return list;
         }
 
         public async Task<bool> PostFollower(CreatorFans model)
