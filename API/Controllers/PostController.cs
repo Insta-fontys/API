@@ -44,51 +44,6 @@ namespace API.Controllers
             return Ok(result);
         }
 
-        [HttpPost("upload")]
-        public async Task<IActionResult> Upload()
-        {
-            Post post = new Post();
-
-            try
-            {
-                var file = Request.Form.Files[0];
-                if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "FontysGram")))
-                    Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "FontysGram"));
-
-                var pathToSave = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "FontysGram");
-                if (file.Length > 0)
-                {
-                    var fileName = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
-                    var extention = file.ContentType;
-                    extention = extention.Replace("image/", ".");
-                    fileName = fileName + extention;
-                    var fullPath = Path.Combine(pathToSave, fileName);
-
-                    using (var stream = new FileStream(fullPath, FileMode.Create))
-                    {
-                        file.CopyTo(stream);
-                    }
-
-                    var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
-                    var creator = await userService.GetCreatorByUserName(name);
-
-                    post.Image = fullPath;
-                    post.Description = "test";
-                    var result = await _database.PostPost(post, creator);
-
-                    return Ok();
-                }
-                else
-                {
-                    return BadRequest();
-                }
-            }
-            catch(Exception e)
-            {
-                return BadRequest();
-            }
-        }
-
         [HttpDelete("id")]
         public async Task<ActionResult<bool>> DeletePost(long id)
         {

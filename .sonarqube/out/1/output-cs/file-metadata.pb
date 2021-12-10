@@ -1,0 +1,32 @@
+=
+4D:\Fontys\S3\API\API\Controllers\FollowController.csutf-8<
+3D:\Fontys\S3\API\API\Controllers\LoginController.csutf-8;
+2D:\Fontys\S3\API\API\Controllers\PostController.csutf-8?
+6D:\Fontys\S3\API\API\Controllers\ReactionController.csutf-8?
+6D:\Fontys\S3\API\API\Controllers\RegisterController.csutf-8?
+6D:\Fontys\S3\API\API\Controllers\SaveLikeController.csutf-8<
+3D:\Fontys\S3\API\API\Controllers\TokenController.csutf-8(
+D:\Fontys\S3\API\API\Program.csutf-8B
+9D:\Fontys\S3\API\API\Security\JwtAuthenticationManager.csutf-8?
+6D:\Fontys\S3\API\API\Services\AuthenticationService.csutf-8?
+6D:\Fontys\S3\API\API\Services\FollowDatabaseService.csutf-8E
+<D:\Fontys\S3\API\API\Services\IdentityRegistrationService.csutf-8D
+;D:\Fontys\S3\API\API\Services\Interfaces\IFollowDatabase.csutf-8G
+>D:\Fontys\S3\API\API\Services\Interfaces\ILikePostsDatabase.csutf-8C
+:D:\Fontys\S3\API\API\Services\Interfaces\ILoginDatabase.csutf-8B
+9D:\Fontys\S3\API\API\Services\Interfaces\IPostDatabase.csutf-8F
+=D:\Fontys\S3\API\API\Services\Interfaces\IReactionDatabase.csutf-8F
+=D:\Fontys\S3\API\API\Services\Interfaces\IRegisterDatabase.csutf-8C
+:D:\Fontys\S3\API\API\Services\Interfaces\ITokenDatabase.csutf-8A
+8D:\Fontys\S3\API\API\Services\LikePostDatabaseService.csutf-8>
+5D:\Fontys\S3\API\API\Services\LoginDatabaseService.csutf-8=
+4D:\Fontys\S3\API\API\Services\PostDatabaseService.csutf-8A
+8D:\Fontys\S3\API\API\Services\ReactionDatabaseService.csutf-8A
+8D:\Fontys\S3\API\API\Services\RegisterDatabaseService.csutf-8>
+5D:\Fontys\S3\API\API\Services\TokenDatabaseService.csutf-85
+,D:\Fontys\S3\API\API\Services\UserService.csutf-8(
+D:\Fontys\S3\API\API\Startup.csutf-8A
+8D:\Fontys\S3\API\API\TestServices\RegisterTestService.csutf-8_
+TD:\Fontys\S3\API\API\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csutf-8D
+9D:\Fontys\S3\API\API\obj\Debug\net5.0\API.AssemblyInfo.csutf-8W
+LD:\Fontys\S3\API\API\obj\Debug\net5.0\API.MvcApplicationPartsAssemblyInfo.csutf-8
