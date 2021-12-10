@@ -1,7 +1,7 @@
 name: sonarqube
 on:
   push:
-    branches: [develop]
+    branches: [develop, workflows]
 
 jobs:
   build:
