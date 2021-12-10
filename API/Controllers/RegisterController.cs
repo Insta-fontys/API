@@ -2,10 +2,6 @@
 using DataAccesLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -34,12 +30,6 @@ namespace API.Controllers
         [HttpPost("fan")]
         public async Task<ActionResult<bool>> PostFanAccount([FromBody] Fan fan)
         {
-            var user = new IdentityUser
-            {
-                Email = fan.Email.Trim(),
-                UserName = fan.Username.Trim()
-            };
-
             var result = await _database.PostFanAccount(fan);
             if (!result)
                 return BadRequest(result);
