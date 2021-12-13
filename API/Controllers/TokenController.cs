@@ -4,8 +4,6 @@ using DataAccesLibrary.Dto;
 using DataAccesLibrary.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,7 +16,7 @@ namespace API.Controllers
     {
         private readonly ITokenDatabase _database;
         private readonly UserService userService;
-            
+
         public TokenController(ITokenDatabase database, UserService userService)
         {
             _database = database;
@@ -26,7 +24,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<bool>> PostTokens([FromBody]BuyTokensModel buyTokensModel)
+        public async Task<ActionResult<bool>> PostTokens([FromBody] BuyTokensModel buyTokensModel)
         {
             var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
             Fan fan = await userService.GetFanByUsername(name);

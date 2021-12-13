@@ -40,6 +40,9 @@ namespace API.Services
         public async Task<bool> DonateTokens(DonateTokensModel donateTokensModel)
         {
             Fan fan = await userService.GetFanById(donateTokensModel.FanId);
+            if (!HasEnoughTokens(fan, donateTokensModel.Amount))
+                return false;
+
             Creator creator = await userService.GetCreatorById(donateTokensModel.CreatorId);
 
             fan.Tokens -= donateTokensModel.Amount;
@@ -57,6 +60,11 @@ namespace API.Services
             {
                 return false;
             }
+        }
+
+        private bool HasEnoughTokens(Fan fan, int tokensAmount)
+        {
+            return fan.Tokens > tokensAmount;
         }
     }
 }
