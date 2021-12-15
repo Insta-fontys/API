@@ -19,10 +19,10 @@ namespace API.Controllers
             this.userService = userService;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<Creator>> GetCreator(UserRequestModel userRequestModel)
+        [HttpGet("{name}")]
+        public async Task<ActionResult<Creator>> GetCreator([FromRoute] string name)
         {
-            return await userService.GetCreatorByUserName(userRequestModel.Username);
+            return await userService.GetCreatorByUserName(name);
         }
     }
 }
