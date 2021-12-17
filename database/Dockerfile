@@ -1,3 +1,3 @@
 FROM mysql:5.7.15
-ADD schema.sql /docker-entrypoint-initdb.d
+ADD mygram.sql /docker-entrypoint-initdb.d
 EXPOSE 3306
