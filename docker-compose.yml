@@ -11,11 +11,18 @@ services:
       - "8080:80"
   db:
     container_name: apidb
-    command: --default-authentiation-plugin=mysql_native-password
+    image: mysql:latest
+    restart: always
     build:
       context: ./database
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_ROOT_PASSWORD: test
     ports:
       - "3306:3306"
+    volumes:
+      - ./mygram:/var/lib/mysql
+
+volumes:
+  mygram:
+
 

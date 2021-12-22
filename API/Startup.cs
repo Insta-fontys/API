@@ -145,21 +145,21 @@ namespace API
                 endpoints.MapControllers();
             });
 
-            Init(serviceProvider).Wait();
+            //Init(serviceProvider).Wait();
 
         }
 
         private static async Task Init(IServiceProvider serviceProvider)
         {
-            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            //var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-            //create correct roles
-            if (!await roleManager.RoleExistsAsync("admin"))
-                await roleManager.CreateAsync(new IdentityRole("admin"));
-            if (!await roleManager.RoleExistsAsync("fan"))
-                await roleManager.CreateAsync(new IdentityRole("fan"));
-            if (!await roleManager.RoleExistsAsync("creator"))
-                await roleManager.CreateAsync(new IdentityRole("creator"));
+            ////create correct roles
+            //if (!await roleManager.RoleExistsAsync("admin"))
+            //    await roleManager.CreateAsync(new IdentityRole("admin"));
+            //if (!await roleManager.RoleExistsAsync("fan"))
+            //    await roleManager.CreateAsync(new IdentityRole("fan"));
+            //if (!await roleManager.RoleExistsAsync("creator"))
+            //    await roleManager.CreateAsync(new IdentityRole("creator"));
         }
     }
 }
