@@ -1,7 +1,7 @@
 name: CI to Docker Hub
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop Docker-compose-implementation]
   pull_request:
     branches: [ main, develop ]
 jobs:
