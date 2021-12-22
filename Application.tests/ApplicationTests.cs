@@ -3,13 +3,12 @@ using API.TestServices;
 using DataAccesLibrary.DataAccess;
 using DataAccesLibrary.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Application.tests
 {
-    public class UnitTest1
+    public class ApplicationTests
     {
 
         [Fact, Trait("Category", "A")]
