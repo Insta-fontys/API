@@ -19,7 +19,7 @@ namespace API.Services
 
         public async Task<Creator> GetCreatorByUserName(string username)
         {
-            return await _context.Creators.Where(i => i.Username == username).FirstOrDefaultAsync();
+            return await _context.Creators.Where(i => i.Username == username).Include(i => i.Posts).Include(i => i.Followers).FirstOrDefaultAsync();
         }
 
         public async Task<Creator> GetCreatorById(long id)
