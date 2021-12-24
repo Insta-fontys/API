@@ -27,7 +27,7 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<bool>> SaveLike(Post likedPosts)
         {
-            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            var name = User.Claims.FirstOrDefault(i => i.Type == "Name").Value;
             Fan fan = await userService.GetFanByUsername(name);
             var result = await _database.PostILiked(likedPosts, fan.Id);
             if (result)

@@ -26,7 +26,7 @@ namespace API.Controllers
         [HttpPut]
         public async Task<ActionResult<bool>> PostTokens([FromBody] BuyTokensModel buyTokensModel)
         {
-            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            var name = User.Claims.FirstOrDefault(i => i.Type == "Name").Value;
             Fan fan = await userService.GetFanByUsername(name);
             buyTokensModel.FanId = fan.Id;
             var result = await _database.BuyTokens(buyTokensModel);
@@ -38,7 +38,7 @@ namespace API.Controllers
         [HttpPut("donate")]
         public async Task<ActionResult<bool>> DonateTokens(DonateTokensModel donateTokensModel)
         {
-            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            var name = User.Claims.FirstOrDefault(i => i.Type == "Name").Value;
             Fan fan = await userService.GetFanByUsername(name);
             donateTokensModel.FanId = fan.Id;
             var result = await _database.DonateTokens(donateTokensModel);

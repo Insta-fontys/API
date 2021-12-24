@@ -238,7 +238,7 @@ namespace Application.tests
             Assert.True(result);
         }
 
-        private Fan CreateFan()
+        private static Fan CreateFan()
         {
             Fan fan = new Fan()
             {
@@ -248,7 +248,7 @@ namespace Application.tests
             return fan;
         }
 
-        private Creator CreateCreator()
+        private static Creator CreateCreator()
         {
             Creator creator = new Creator()
             {

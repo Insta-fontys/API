@@ -93,7 +93,7 @@ namespace API.Services
             }
         }
 
-        private Post CreatePostWithCorrectReferences(Post post, Creator creator)
+        private static Post CreatePostWithCorrectReferences(Post post, Creator creator)
         {
             post.Reactions = new List<Reaction>();
 

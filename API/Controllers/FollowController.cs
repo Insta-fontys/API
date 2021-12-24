@@ -29,7 +29,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<List<CreatorFans>> GetFollowers()
         {
-            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            var name = User.Claims.FirstOrDefault(i => i.Type == "Name").Value;
             Creator creator = await userService.GetCreatorByUserName(name);
 
             return await _database.GetFollowers(creator.Id);
@@ -39,7 +39,7 @@ namespace API.Controllers
         [HttpGet("following")]
         public async Task<List<CreatorFans>> GetFollowings()
         {
-            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            var name = User.Claims.FirstOrDefault(i => i.Type == "Name").Value;
             Fan fan = await userService.GetFanByUsername(name);
 
             return await _database.GetFollowings(fan.Id);
@@ -49,7 +49,7 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<bool>> PostFollow(CreatorFans followModel)
         {
-            var name = User.Claims.Where(i => i.Type == "Name").FirstOrDefault().Value;
+            var name = User.Claims.FirstOrDefault(i => i.Type == "Name").Value;
             Fan fan = await userService.GetFanByUsername(name);
             followModel.FanId = fan.Id;
             var response = await _database.PostFollower(followModel);

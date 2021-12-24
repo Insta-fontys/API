@@ -47,7 +47,7 @@ namespace API.TestServices
             }
         }
 
-        private Fan CreateFan(Fan fan)
+        private static Fan CreateFan(Fan fan)
         {
             fan.CreatorFans = new List<CreatorFans>();
             fan.LikedPosts = new List<LikedPosts>();
@@ -57,7 +57,7 @@ namespace API.TestServices
             return fan;
         }
 
-        private Creator CreateCreator(Creator creator)
+        private static Creator CreateCreator(Creator creator)
         {
             creator.BannedFans = new List<Fan>();
             creator.Followers = new List<CreatorFans>();
