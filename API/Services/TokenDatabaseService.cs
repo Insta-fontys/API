@@ -64,7 +64,7 @@ namespace API.Services
 
         private bool HasEnoughTokens(Fan fan, int tokensAmount)
         {
-            return fan.Tokens > tokensAmount;
+            return fan.Tokens >= tokensAmount;
         }
     }
 }
