@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using API.Utils;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,12 @@ namespace API.Services
     public class IdentityRegistrationService
     {
         private readonly UserManager<IdentityUser> userManager;
+        private readonly MailService mailService;
+        private static PasswordGenerator generator = new PasswordGenerator();
 
-
-        public IdentityRegistrationService(UserManager<IdentityUser> userManager)
+        public IdentityRegistrationService(UserManager<IdentityUser> userManager, MailService mailService)
         {
+            this.mailService = mailService;
             this.userManager = userManager;
         }
 
@@ -24,30 +27,17 @@ namespace API.Services
 
         public async Task<bool> CreateIdentityUser(IdentityUser user, string role)
         {
-            // TODO Generate random password here
-            var password = "!erQWE2qweqweS";
-            //var password = RandomPasswordGenerator(13);
+            var password = generator.GenerateRandomPassword();
 
             var result = await userManager.CreateAsync(user, password);
 
             if (result.Succeeded)
             {
                 await userManager.AddToRoleAsync(user, role);
+                mailService.SendUserCreatedMail(user.UserName, user.Email, password);
                 return true;
             }
             return false;
-        }
-
-        private string RandomPasswordGenerator(int length)
-        {
-            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*(";
-            StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
-            while (0 < length--)
-            {
-                res.Append(valid[rnd.Next(valid.Length)]);
-            }
-            return res.ToString();
         }
     }
 }
