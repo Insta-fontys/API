@@ -81,8 +81,9 @@ namespace API
                 options.Password.RequiredLength = 8;
                 options.Password.RequireDigit = true;
                 options.Password.RequireUppercase = true;
-                options.Password.RequiredUniqueChars = 1;
+                options.Password.RequiredUniqueChars = 4;
                 options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
             }).AddEntityFrameworkStores<IdentityDatabaseContext>()
                .AddDefaultTokenProviders();
 
@@ -113,6 +114,7 @@ namespace API
             services.AddTransient<IdentityRegistrationService>();
             services.AddTransient<AuthenticationService>();
             services.AddTransient<UserService>();
+            services.AddTransient<MailService>();
 
         }
 
