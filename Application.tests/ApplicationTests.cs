@@ -1,5 +1,6 @@
 using API.Services;
 using API.TestServices;
+using API.Utils;
 using DataAccesLibrary.DataAccess;
 using DataAccesLibrary.Dto;
 using DataAccesLibrary.Models;
@@ -236,6 +237,16 @@ namespace Application.tests
             };
             var result = await _tokenDatabase.DonateTokens(donateTokensModel);
             Assert.True(result);
+        }
+
+        [Fact, Trait("Category", "A")]
+        public async Task GeneratePassword()
+        {
+            var generator = new PasswordGenerator();
+
+            var password = generator.GenerateRandomPassword();
+
+            Assert.NotNull(password);
         }
 
         private static Fan CreateFan()
