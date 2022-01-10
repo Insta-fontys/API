@@ -16,7 +16,6 @@ namespace API.TestServices
             _context = context;
         }
 
-
         public async Task<bool> PostFanAccount(Fan fan)
         {
             var _fan = CreateFan(fan);

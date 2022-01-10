@@ -265,3 +265,5 @@ E:\Fontys\S3\Repository\API\API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptograp
 E:\Fontys\S3\Repository\API\API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\Fontys\S3\Repository\API\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 E:\Fontys\S3\Repository\API\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+E:\Fontys\S3\Repository\API\API\bin\Debug\net5.0\MailKit.dll
+E:\Fontys\S3\Repository\API\API\bin\Debug\net5.0\MimeKit.dll

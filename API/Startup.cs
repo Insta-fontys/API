@@ -97,7 +97,7 @@ namespace API
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("DSEFSDF324dsfsd!@QWDF3erf#")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["JWTKey"])),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
