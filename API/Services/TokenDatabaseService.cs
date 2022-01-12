@@ -50,7 +50,7 @@ namespace API.Services
 
             try
             {
-                _database.Fans.Update(fan);
+                    _database.Fans.Update(fan);
                 _database.Creators.Update(creator);
 
                 await _database.SaveChangesAsync();

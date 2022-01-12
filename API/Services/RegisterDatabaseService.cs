@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using DataAccesLibrary.Dto;
 
 namespace API.Services
 {
@@ -60,6 +61,20 @@ namespace API.Services
                 await _context.SaveChangesAsync();
             }
             return true;
+        }
+
+        public async Task<bool> PostAdminAccount(RegisterModel registerModel)
+        {
+            var user = new IdentityUser
+            {
+                Email = registerModel.Email.Trim(),
+                UserName = registerModel.Username.Trim()
+            };
+            if (!await identityRegistrationService.DoesEmailExist(registerModel.Email))
+                return false;
+            if (await identityRegistrationService.CreateIdentityUser(user, "admin"))
+                return true;
+            return false;
         }
 
         private Fan CreateFan(Fan fan)

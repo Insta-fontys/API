@@ -45,5 +45,13 @@ namespace API.Controllers
             var result = await authenticationService.Authenticate(loginModel);
             return result;
         }
+
+        [AllowAnonymous]
+        [HttpPost("authenticateAdmin")]
+        public async Task<string> AuthenticateAdmin([FromBody] LoginModel loginModel)
+        {
+            var result = await authenticationService.AuthenticateAdmin(loginModel);
+            return result;
+        }
     }
 }

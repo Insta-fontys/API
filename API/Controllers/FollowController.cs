@@ -57,5 +57,11 @@ namespace API.Controllers
                 return BadRequest();
             return Ok();
         }
+
+        //[HttpDelete]
+        //public async Task<ActionResult<bool>> DeleteFollower(CreatorFans followModel)
+        //{
+
+        //}
     }
 }

@@ -22,7 +22,7 @@ namespace API.Controllers
         [HttpGet("{name}")]
         public async Task<ActionResult<Creator>> GetCreator([FromRoute] string name)
         {
-            return await userService.GetCreatorByUserName(name);
+            return Ok(await userService.GetCreatorByUserName(name));
         }
     }
 }

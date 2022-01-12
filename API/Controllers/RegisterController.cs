@@ -3,6 +3,7 @@ using DataAccesLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
+using DataAccesLibrary.Dto;
 
 namespace API.Controllers
 {
@@ -34,6 +35,15 @@ namespace API.Controllers
             if (!result)
                 return BadRequest(result);
             return Ok(result);
+        }
+
+        [HttpPost("admin")]
+        public async Task<bool> PostAdminAccount(RegisterModel registerModel)
+        {
+            if (await _database.PostAdminAccount(registerModel))
+                return true;
+
+            return false;
         }
     }
 }

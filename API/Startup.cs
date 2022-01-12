@@ -1,5 +1,6 @@
 using API.Services;
 using API.Services.Interfaces;
+using API_Admin.Services;
 using DataAccesLibrary.DataAccess;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -110,6 +111,7 @@ namespace API
             services.AddTransient<ILikePostsDatabase, LikePostDatabaseService>();
             services.AddTransient<ITokenDatabase, TokenDatabaseService>();
             services.AddTransient<IFollowDatabase, FollowDatabaseService>();
+            services.AddTransient<IAdminDatabase, AdminDatabaseService>();
 
             services.AddTransient<IdentityRegistrationService>();
             services.AddTransient<AuthenticationService>();
@@ -138,8 +140,6 @@ namespace API
             app.UseAuthorization();
 
             app.UseStaticFiles();
-
-           
 
 
             app.UseEndpoints(endpoints =>

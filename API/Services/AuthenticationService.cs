@@ -42,8 +42,24 @@ namespace API.Services
             var result = await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false);
             var roles = await userManager.GetRolesAsync(user);
 
+            if (roles.First() == "admin")
+                return null;
             if (result.Succeeded)
                 return JwtAuthenticationManager.GenerateJwtToken(user, roles.First());
+            return null;
+        }
+
+        public async Task<string> AuthenticateAdmin(LoginModel loginModel)
+        {
+            var user = await userManager.FindByEmailAsync(loginModel.Email);
+            var result = await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false);
+            var roles = await userManager.GetRolesAsync(user);
+
+            if (roles.Contains("admin"))
+            {
+                if (result.Succeeded)
+                    return JwtAuthenticationManager.GenerateJwtToken(user, roles.First());
+            }
             return null;
         }
     }

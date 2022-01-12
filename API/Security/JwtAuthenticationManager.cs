@@ -23,7 +23,7 @@ namespace API.Security
                 Subject = new ClaimsIdentity(new Claim[] {
                     new Claim("Name", user.UserName),
                     new Claim("Email", user.Email),
-                    new Claim("Role", role)
+                    new Claim("role", role)
                 }),
                 Expires = DateTime.Now.AddDays(7),
                 SigningCredentials = new SigningCredentials(
